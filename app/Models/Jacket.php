@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Jacket extends Model
 {
     use HasFactory;
+    
 }
