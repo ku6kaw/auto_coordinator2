@@ -15,7 +15,7 @@ class ClothesController extends Controller
      */
     public function index()
     {
-        $clothes = [];
+        $clothes = Cloth::getAllOrderByUpdated_at();
         return view('clothes.index',compact('clothes'));
     }
 
@@ -51,9 +51,9 @@ class ClothesController extends Controller
         }
         // create()は最初から用意されている関数
         // 戻り値は挿入されたレコードの情報
-        $result = Tweet::create($request->all());
+        $result = Cloth::create($request->all());
         // ルーティング「todo.index」にリクエスト送信（一覧ページに移動）
-        return redirect()->route('tweet.index');
+        return redirect()->route('clothes.index');
     }
 
     /**
