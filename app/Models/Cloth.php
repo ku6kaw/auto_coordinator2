@@ -19,4 +19,4 @@ class Cloth extends Model
         return self::where("user_id",$user_id)->get();
     }
     
-}
+
