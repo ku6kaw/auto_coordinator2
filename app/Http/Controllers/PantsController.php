@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator;
-use App\Models\Cloth;
-class ClothesController extends Controller
+use App\Models\Pant;
+
+class PantsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class ClothesController extends Controller
      */
     public function index()
     {
-        $clothes = Cloth::get_user_clothes_By_Updated_at();
-        return view('clothes.index',compact("clothes"));
+        $Pants = Pant::get_user_Pants_By_Updated_at();
+        return view('pants.index',compact("Pants"));
     }
 
     /**
@@ -24,8 +24,8 @@ class ClothesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {  
-        return view('clothes.create');
+    {
+          return view('pants.create');
     }
 
     /**
@@ -36,23 +36,7 @@ class ClothesController extends Controller
      */
     public function store(Request $request)
     {
-        // バリデーション
-        $validator = Validator::make($request->all(), [
-            'clothes' => 'required | max:191',
-            'description' => 'required',
-        ]);
-        // バリデーション:エラー
-        if ($validator->fails()) {
-            return redirect()
-            ->route('clothes.create')
-            ->withInput()
-            ->withErrors($validator);
-        }
-        // create()は最初から用意されている関数
-        // 戻り値は挿入されたレコードの情報
-        $result = Cloth::create($request->all());
-        // ルーティング「todo.index」にリクエスト送信（一覧ページに移動）
-        return redirect()->route('clothes.index');
+        //
     }
 
     /**

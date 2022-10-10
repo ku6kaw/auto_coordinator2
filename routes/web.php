@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClothesController;
+use App\Http\Controllers\PantsController;
+use App\Http\Controllers\JacketsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,8 @@ use App\Http\Controllers\ClothesController;
 |
 */
 Route::resource('clothes', ClothesController::class);
+Route::resource('pants', PantsController::class);
+Route::resource('jackets', JacketsController::class);
 
 Route::get('/', function () {
     return view('welcome');
