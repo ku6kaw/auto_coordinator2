@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
-use App\Models\Clothes;
-
+use App\Models\Cloth;
+use App\Models\Jacket;
+use App\Models\Pant;
 class ClothesController extends Controller
 {
     /**
@@ -15,8 +16,12 @@ class ClothesController extends Controller
      */
     public function index()
     {
-        $clothes = Cloth::getAllOrderByUpdated_at();
-        return view('clothes.index',compact('clothes'));
+        $clothes = Cloth::get_user_clothes_By_Updated_at();
+        $Jackets = Jacket::get_user_Jackets_By_Updated_at();
+        $Pants = Pant::get_user_Pants_By_Updated_at();
+        return view('clothes.index',compact('clothes',
+                                            "Jackets",
+                                            "Pants"));
     }
 
     /**
@@ -25,7 +30,7 @@ class ClothesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {  
         return view('clothes.create');
     }
 

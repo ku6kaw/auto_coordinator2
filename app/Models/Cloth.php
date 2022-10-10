@@ -14,9 +14,13 @@ class Cloth extends Model
         "color",
         "image"
     ];
-    public static function get_user_clothes(){
-        $user_id=Auth::user();
-        return self::where("user_id",$user_id)->get();
+    public static function get_user_clothes_By_Updated_at(){
+        $user_id=Auth::id();
+        return self::where("user_id",$user_id)
+        ->orderBy("created_at","desc")
+        ->get();
     }
+/*ユーザーの服の情報を取得。最新のものが上に来るように*/
+}
     
 
