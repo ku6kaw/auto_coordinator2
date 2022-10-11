@@ -19,6 +19,12 @@ class Pant extends Model
         ->orderBy("created_at","desc")
         ->get();
     }
+    public static function get_search_user_pants($length){
+       $user_id=Auth::id();
+        return self::where("user_id",$user_id)
+        ->where("length",intval($length))
+        ->get();
+    }
     
     
 }
