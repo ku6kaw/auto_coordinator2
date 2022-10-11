@@ -20,16 +20,24 @@
           @include('common.errors')
           <form class="mb-6" action="{{ route('pants.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-
             <div class="flex flex-col mb-4">
-              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="clothes">Pants</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="file" name="image" id="clothes">
-              <button>アップロード</button>
+              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="length">length</label>
+            <div class="flex items-center mb-4">
+                <input id="long_pants" type="radio" value="0" name="pants" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="long_pants" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Long pants</label>
             </div>
-
+            <div class="flex items-center">
+                <input checked id="short_pants" type="radio" value="1" name="pants" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="short_pants" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Short pants</label>
+            </div>
+            </div>
+             <div class="flex flex-col mb-4">
+              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="color">color</label>
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="color" id="color">
+            </div>
             <div class="flex flex-col mb-4">
-              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="description">Description</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="description" id="description">
+              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="image">image</label>
+              <input class="border py-2 px-3 text-grey-darkest" type="file" name="image" id="image">
             </div>
             <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
               Create

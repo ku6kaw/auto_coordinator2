@@ -11,7 +11,8 @@ class Pant extends Model
     protected $fillable=[
         "length",
         "color",
-        "image"
+        "image",
+        "user_id"
     ];
     public static function get_user_pants_By_Updated_at(){
         $user_id=Auth::id();

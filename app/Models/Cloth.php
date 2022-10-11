@@ -12,7 +12,8 @@ class Cloth extends Model
     protected $fillable=[
         "sleeve",
         "color",
-        "image"
+        "image",
+        "user_id"
     ];
     public static function get_user_clothes_By_Updated_at(){
        $user_id=Auth::id();

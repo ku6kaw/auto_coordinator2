@@ -18,16 +18,13 @@
           @include('common.errors')
           <form class="mb-6" action="{{ route('jackets.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-
-            <div class="flex flex-col mb-4">
-              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="clothes">Jackets</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="file" name="image" id="clothes">
-              <button>アップロード</button>
+             <div class="flex flex-col mb-4">
+              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="color">color</label>
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="color" id="color">
             </div>
-
             <div class="flex flex-col mb-4">
-              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="description">Description</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="description" id="description">
+              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="image">image</label>
+              <input class="border py-2 px-3 text-grey-darkest" type="file" name="image" id="image">
             </div>
             <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
               Create

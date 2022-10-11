@@ -10,7 +10,8 @@ class Jacket extends Model
     use HasFactory;
     protected $fillable=[
         "color",
-        "image"
+        "image",
+        "user_id"
     ];
     public static function get_user_jackets_By_Updated_at(){
          $user_id=Auth::id();

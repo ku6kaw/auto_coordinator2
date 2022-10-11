@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\Cloth;
+use Auth;
 class ClothesController extends Controller
 {
     /**
@@ -48,8 +49,8 @@ class ClothesController extends Controller
     {
         // バリデーション
         $validator = Validator::make($request->all(), [
-            'clothes' => 'required | max:191',
-            'description' => 'required',
+            'color' => 'required',
+            'image'=>'required'
         ]);
         // バリデーション:エラー
         if ($validator->fails()) {
@@ -58,9 +59,17 @@ class ClothesController extends Controller
             ->withInput()
             ->withErrors($validator);
         }
+        $image=$request->file('image')->store("clothes","public");
+        /*返り値に新たに作ったファイルのpathを返す。*/
+
+        $create_request=["user_id"=>Auth::id(),
+                    "sleeve"=>intval($request->all()["sleeve"]),
+                    "color"=>$request->all()["color"],
+                    "image"=>$image];
+            /*文字列の数字をint型に変換*/
         // create()は最初から用意されている関数
         // 戻り値は挿入されたレコードの情報
-        $result = Cloth::create($request->all());
+        $result = Cloth::create($create_request);
         // ルーティング「todo.index」にリクエスト送信（一覧ページに移動）
         return redirect()->route('clothes.index');
     }
