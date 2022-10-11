@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClothesController;
 use App\Http\Controllers\PantsController;
 use App\Http\Controllers\JacketsController;
+use App\Http\Controllers\SearchController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,12 @@ use App\Http\Controllers\JacketsController;
 Route::resource('clothes', ClothesController::class);
 Route::resource('pants', PantsController::class);
 Route::resource('jackets', JacketsController::class);
+
+Route::get('/coordinate/search/input', [SearchController::class, 'create'])->name('search.input');
+Route::get('/coordinate/search/result', [SearchController::class, 'index'])->name('search.result');
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
