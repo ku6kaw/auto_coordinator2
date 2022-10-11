@@ -3,13 +3,13 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Clothes Index') }}
+      {{ __('Pants Index') }}
     </h2>
     <div class="flex justify-end">
-      <a href="/pants"><div>Pants Index</div></a>
+      <a href="/clothes"><div>Clothes Index</div></a>
     </div>
     <div class="flex justify-end">
-      <a href="/jackets"><div>Jackets Index</div></a>
+      <a href="jackets"><div>Jackets Index</div></a>
     </div>
   </x-slot>
 
@@ -20,20 +20,20 @@
           <table class="text-center w-full border-collapse">
             <thead>
               <tr>
-                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">clothes</th>
+                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">Pants</th>
               </tr>
             </thead>
             <tbody>
-              @foreach ($long_sleeves as $cloth)
+               @foreach ($long_pants as $pant)
               <tr class="hover:bg-grey-lighter">
 
                 <td class="py-4 px-6 border-b border-grey-light">
                   @if($loop->first)
                   <div class="text-center font-bold text-lg text-grey-dark">
-                    Long sleeve
+                    Long pants
                   </div>
                   @endif
-                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$cloth->image}}</h3>
+                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$pant->image}}</h3>
                                                                          <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
                   <div class="flex">
                     <!-- 更新ボタン -->
@@ -42,15 +42,15 @@
                 </td>
               </tr>
               @endforeach
-              @foreach ($short_sleeves as $cloth)
+              @foreach ($short_pants as $pant)
               <tr class="hover:bg-grey-lighter">
                 <td class="py-4 px-6 border-b border-grey-light">
                   @if($loop->first)
                   <div class="text-center font-bold text-lg text-grey-dark">
-                    Short sleeve
+                    Short pants
                   </div>
                   @endif
-                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$cloth->image}}</h3>
+                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$pant->image}}</h3>
                                                                          <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
                   <div class="flex">
                     <!-- 更新ボタン -->
@@ -66,4 +66,3 @@
     </div>
   </div>
 </x-app-layout>
-

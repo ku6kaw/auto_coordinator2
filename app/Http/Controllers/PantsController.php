@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator;
-use App\Models\Cloth;
-class ClothesController extends Controller
+use App\Models\Pant;
+
+class PantsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,18 +14,18 @@ class ClothesController extends Controller
      */
     public function index()
     {
-        $clothes = Cloth::get_user_clothes_By_Updated_at()->all();
-        $long_sleeves=[];
-        $short_sleeves=[];
-        foreach($clothes as $cloth){
-            if($cloth->sleeve==0){
-                array_push($long_sleeves,$cloth);
+        $Pants = Pant::get_user_Pants_By_Updated_at()->all();
+        $long_pants=[];
+        $short_pants=[];
+        foreach($Pants as $pant){
+            if($pant->length==0){
+                array_push($long_pants,$pant);
             }
             else{
-                array_push($short_sleeves,$cloth);
+                array_push($short_pants,$pant);
             }
         }
-        return view('clothes.index',compact("long_sleeves","short_sleeves"));
+        return view('pants.index',compact("long_pants","short_pants"));
     }
 
     /**
@@ -34,8 +34,8 @@ class ClothesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {  
-        return view('clothes.create');
+    {
+          return view('pants.create');
     }
 
     /**
@@ -46,23 +46,7 @@ class ClothesController extends Controller
      */
     public function store(Request $request)
     {
-        // バリデーション
-        $validator = Validator::make($request->all(), [
-            'clothes' => 'required | max:191',
-            'description' => 'required',
-        ]);
-        // バリデーション:エラー
-        if ($validator->fails()) {
-            return redirect()
-            ->route('clothes.create')
-            ->withInput()
-            ->withErrors($validator);
-        }
-        // create()は最初から用意されている関数
-        // 戻り値は挿入されたレコードの情報
-        $result = Cloth::create($request->all());
-        // ルーティング「todo.index」にリクエスト送信（一覧ページに移動）
-        return redirect()->route('clothes.index');
+        //
     }
 
     /**
