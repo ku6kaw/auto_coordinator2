@@ -107,6 +107,7 @@ class ClothesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $result = Cloth::find($id)->delete();
+        return redirect()->route('clothes.index');
     }
 }
