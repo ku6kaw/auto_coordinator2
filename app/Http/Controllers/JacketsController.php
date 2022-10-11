@@ -24,7 +24,7 @@ class JacketsController extends Controller
      */
     public function create()
     {
-        //
+        return view('jackets.create');
     }
 
     /**

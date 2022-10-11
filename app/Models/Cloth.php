@@ -15,7 +15,7 @@ class Cloth extends Model
         "image"
     ];
     public static function get_user_clothes_By_Updated_at(){
-        $user_id=Auth::id();
+       $user_id=Auth::id();
         return self::where("user_id",$user_id)
         ->orderBy("created_at","desc")
         ->get();

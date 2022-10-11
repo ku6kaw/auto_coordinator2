@@ -5,6 +5,12 @@
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
       {{ __('Create New Clothes') }}
     </h2>
+    <div class="flex justify-end">
+      <a href="/pants/create"><div>Create New Pants</div></a>
+    </div>
+    <div class="flex justify-end">
+      <a href="/jackets/create"><div>Create New Jackets</div></a>
+    </div>
   </x-slot>
   
   <div class="py-12">

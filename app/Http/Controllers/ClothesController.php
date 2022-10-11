@@ -14,8 +14,18 @@ class ClothesController extends Controller
      */
     public function index()
     {
-        $clothes = Cloth::get_user_clothes_By_Updated_at();
-        return view('clothes.index',compact("clothes"));
+        $clothes = Cloth::get_user_clothes_By_Updated_at()->all();
+        $long_sleeves=[];
+        $short_sleeves=[];
+        foreach($clothes as $cloth){
+            if($cloth->sleeve==0){
+                array_push($long_sleeves,$cloth);
+            }
+            else{
+                array_push($short_sleeves,$cloth);
+            }
+        }
+        return view('clothes.index',compact("long_sleeves","short_sleeves"));
     }
 
     /**

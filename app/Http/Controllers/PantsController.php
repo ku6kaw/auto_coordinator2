@@ -14,8 +14,18 @@ class PantsController extends Controller
      */
     public function index()
     {
-        $Pants = Pant::get_user_Pants_By_Updated_at();
-        return view('pants.index',compact("Pants"));
+        $Pants = Pant::get_user_Pants_By_Updated_at()->all();
+        $long_pants=[];
+        $short_pants=[];
+        foreach($Pants as $pant){
+            if($pant->length==0){
+                array_push($long_pants,$pant);
+            }
+            else{
+                array_push($short_pants,$pant);
+            }
+        }
+        return view('pants.index',compact("long_pants","short_pants"));
     }
 
     /**

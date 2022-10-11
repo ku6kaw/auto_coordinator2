@@ -24,9 +24,32 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($clothes as $cloth)
+              @foreach ($long_sleeves as $cloth)
+              <tr class="hover:bg-grey-lighter">
+
+                <td class="py-4 px-6 border-b border-grey-light">
+                  @if($loop->first)
+                  <div class="text-center font-bold text-lg text-grey-dark">
+                    Long sleeve
+                  </div>
+                  @endif
+                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$cloth->image}}</h3>
+                                                                         <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
+                  <div class="flex">
+                    <!-- 更新ボタン -->
+                    <!-- 削除ボタン -->
+                  </div>
+                </td>
+              </tr>
+              @endforeach
+              @foreach ($short_sleeves as $cloth)
               <tr class="hover:bg-grey-lighter">
                 <td class="py-4 px-6 border-b border-grey-light">
+                  @if($loop->first)
+                  <div class="text-center font-bold text-lg text-grey-dark">
+                    Short sleeve
+                  </div>
+                  @endif
                   <h3 class="text-left font-bold text-lg text-grey-dark">{{$cloth->image}}</h3>
                                                                          <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
                   <div class="flex">
