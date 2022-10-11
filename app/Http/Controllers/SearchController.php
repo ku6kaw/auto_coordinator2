@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Cloth;
 use App\Models\Pant;
 use App\Models\Jacket;
-
+use Auth;
 class SearchController extends Controller
 {
     /**
@@ -17,13 +17,9 @@ class SearchController extends Controller
     public function index(Request $request)
     {
         $coordinate_info=$request->all();
-        $clothes_array=Cloth::where("sleeve",
-                                intval($coordinate_info["sleeve"]))
-                                ->get()
+        $clothes_array=Cloth::get_search_user_clothes($coordinate_info["sleeve"])
                                 ->all();
-        $pants_array=Pant::where("length",
-                                intval($coordinate_info["pants"]))
-                                ->get()
+        $pants_array=Pant::get_search_user_pants($coordinate_info["pants"])
                                 ->all();
         if($clothes_array!=null){
         $cloth_index=array_rand($clothes_array);
@@ -40,7 +36,7 @@ class SearchController extends Controller
             return redirect(route('search.input'));
         }
         if(intval($coordinate_info["jacket"])==1){
-            $jackets_array=Jacket::get()->all();
+            $jackets_array=Jacket::where("user_id",Auth::id())->get()->all();
             if($jackets_array!=null){
                 $jacket_index=array_rand($jackets_array);
                 $suitable_jacket=$jackets_array[$jacket_index];

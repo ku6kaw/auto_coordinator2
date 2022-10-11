@@ -21,6 +21,12 @@ class Cloth extends Model
         ->get();
     }
 /*ユーザーの服の情報を取得。最新のものが上に来るように*/
+public static function get_search_user_clothes($sleeve){
+       $user_id=Auth::id();
+        return self::where("user_id",$user_id)
+        ->where("sleeve",intval($sleeve))
+        ->get();
+    }
 }
     
 
