@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
-use App\Models\Clothes;
+use App\Models\Cloth;
 
 class ClothesController extends Controller
 {
@@ -39,8 +39,10 @@ class ClothesController extends Controller
     {
         // バリデーション
         $validator = Validator::make($request->all(), [
-            'clothes' => 'required | max:191',
-            'description' => 'required',
+            'clothes' => 'required',
+            'sleeve' => 'required',
+            //'color' => 'required',
+            'image' => 'required',
         ]);
         // バリデーション:エラー
         if ($validator->fails()) {
@@ -49,9 +51,34 @@ class ClothesController extends Controller
             ->withInput()
             ->withErrors($validator);
         }
+
+        //フォームから送信されてきたデータとユーザIDをマージし，DBにinsertする
+        $data = $request->merge(['user_id' => Auth::user()->id])->all();
+        
+        $image = $request->file('image');
+
         // create()は最初から用意されている関数
         // 戻り値は挿入されたレコードの情報
-        $result = Cloth::create($request->all());
+        $result = Cloth::create($data);
+
+        //storage/app/publicに画像を保存
+        $path = \Storage::put('/public', $image); 
+        
+        $dir = 'image';
+
+        // アップロードされたファイル名を取得
+        $file_name = $request->file('image')->getClientOriginalName();
+
+        // 取得したファイル名で保存
+        $request->file('image')->storeAs('public/' . $dir, $file_name);
+
+        $clothes = new Cloth();
+        $clothes->user_id = $data['user_id'];
+        //$clothes->sleeve = $data['sleeve'];
+        //$clothes->color = $data['color'];
+        $clothes->image = 'storage/' . $dir . '/' . $file_name;
+        $clothes->save();
+
         // ルーティング「todo.index」にリクエスト送信（一覧ページに移動）
         return redirect()->route('clothes.index');
     }
