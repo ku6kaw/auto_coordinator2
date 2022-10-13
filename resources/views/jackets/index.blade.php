@@ -27,7 +27,7 @@
               @foreach ($Jackets as $Jacket)
               <tr class="hover:bg-grey-lighter">
                 <td class="py-4 px-6 border-b border-grey-light">
-                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$Jacket->image}}</h3>
+                  <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$jacket->image)}}"></h3>
                                                                          <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
                   <div class="flex">
                     <!-- 更新ボタン -->

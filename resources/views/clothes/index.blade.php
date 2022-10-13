@@ -59,7 +59,7 @@
                     Short sleeve
                   </div>
                   @endif
-                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$cloth->image}}</h3>
+                  <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$cloth->image)}}"></h3>
                                                                          <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
                   <div class="flex">
                     <!-- 更新ボタン -->

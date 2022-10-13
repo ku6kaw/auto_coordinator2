@@ -59,7 +59,7 @@ class ClothesController extends Controller
             ->withInput()
             ->withErrors($validator);
         }
-        $image=$request->file('image')->store("clothes","public");
+        $image = $request->file('image')->store("clothes","public");
         /*返り値に新たに作ったファイルのpathを返す。*/
 
         $create_request=["user_id"=>Auth::id(),
