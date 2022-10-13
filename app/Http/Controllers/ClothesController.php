@@ -82,7 +82,8 @@ class ClothesController extends Controller
      */
     public function show($id)
     {
-        //
+        $cloth = Cloth::find($id);
+        return view('clothes.show', compact('cloth'));
     }
 
     /**

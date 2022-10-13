@@ -59,10 +59,12 @@
                     Short sleeve
                   </div>
                   @endif
-                  <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$cloth->image)}}"></h3>
-                                                                         <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
-                  <div class="flex">
-                    <!-- 更新ボタン -->
+                  
+                  <a href="{{ route('clothes.show',$cloth->id) }}">
+                    <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$cloth->image)}}"></h3>
+                  </a> 
+                                                                        <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
+                  <div class="flex">   
                     <!-- 削除ボタン -->
                     <form action="{{ route('clothes.destroy',$cloth->id) }}" method="POST" class="text-left">
                       @method('delete')
