@@ -70,7 +70,8 @@ class JacketsController extends Controller
      */
     public function show($id)
     {
-        //
+        $Jacket= Jacket::find($id);
+        return view('jackets.show', compact('Jacket'));
     }
 
     /**

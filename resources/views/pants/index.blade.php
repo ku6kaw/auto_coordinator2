@@ -33,7 +33,9 @@
                     Long pants
                   </div>
                   @endif
-                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$pant->image}}</h3>
+                   <a href="{{ route('pants.show',$pant->id) }}">
+                    <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$pant->image)}}"></h3>
+                  </a> 
                                                                          <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
                   <div class="flex">
                     <!-- 更新ボタン -->
@@ -59,7 +61,9 @@
                     Short pants
                   </div>
                   @endif
-                  <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$pant->image)}}"></h3>
+                   <a href="{{ route('pants.show',$pant->id) }}">
+                    <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$pant->image)}}"></h3>
+                  </a> 
                                                                          <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
                   <div class="flex">
                     <!-- 更新ボタン -->

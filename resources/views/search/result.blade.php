@@ -22,7 +22,7 @@
                   <div class="text-center font-bold text-lg text-grey-dark">
                     Suitable sleeve
                   </div>
-                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$suitable_cloth->image}}</h3>
+                  <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$suitable_cloth->image)}}"></h3>
                                                                          <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
                 </td>
               </tr>
@@ -31,7 +31,7 @@
                   <div class="text-center font-bold text-lg text-grey-dark">
                     Suitable pants
                   </div>
-                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$suitable_pant->image}}</h3>
+                  <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$suitable_pant->image)}}"></h3>
                                                                          <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
                 </td>
               </tr>
@@ -41,7 +41,7 @@
                   <div class="text-center font-bold text-lg text-grey-dark">
                     Suitable jacket
                   </div>
-                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$suitable_jacket->image}}</h3>
+                  <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$suitable_jacket->image)}}"></h3>
                                                                             <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
                 </td>
               </tr>
