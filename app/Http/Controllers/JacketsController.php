@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Jacket;
 use Validator;
 use Auth;
+use Storage;
 class JacketsController extends Controller
 {
     /**
@@ -105,7 +106,9 @@ class JacketsController extends Controller
      */
     public function destroy($id)
     {
-        $result = Jacket::find($id)->delete();
+        $delete_jacket=Jacket::find($id);
+        \Storage::disk('public')->delete($delete_jacket->image);
+        $result = $delete_jacket->delete();
         return redirect()->route('jackets.index');
     }
 }
