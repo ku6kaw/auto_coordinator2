@@ -28,14 +28,14 @@
                 <td class="w-1/2 justify-items-center">
                   @foreach ($long_sleeves as $cloth)
                     <a href="{{ route('clothes.show',$cloth->id) }}">
-                      <img src=" {{asset('storage/'.$cloth->image)}}" class="max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
+                      <img src=" {{asset('storage/'.$cloth->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
                     </a> 
                   @endforeach
                 </td>
                 <td class="w-1/2 justify-items-center">
                   @foreach ($short_sleeves as $cloth)        
                     <a href="{{ route('clothes.show',$cloth->id) }}">
-                      <img src=" {{asset('storage/'.$cloth->image)}}" class="max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
+                      <img src=" {{asset('storage/'.$cloth->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
                     </a> 
                   @endforeach
                 </td>

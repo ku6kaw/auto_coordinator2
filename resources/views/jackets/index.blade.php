@@ -26,7 +26,7 @@
                 <td class="w-1/2 justify-items-center">
                   @foreach ($Jackets as $Jacket)
                     <a href="{{ route('jackets.show',$Jacket->id) }}">
-                      <img src=" {{asset('storage/'.$Jacket->image)}}" class="max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
+                      <img src=" {{asset('storage/'.$Jacket->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
                     </a> 
                   @endforeach
                 </td>

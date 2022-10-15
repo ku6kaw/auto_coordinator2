@@ -5,15 +5,15 @@
       <div class="flex">
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
-          <a href="{{ route('dashboard') }}">
+          <a href="{{ route('search.input') }}">
             <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
           </a>
         </div>
 
         <!-- Navigation Links -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-            {{ __('Dashboard') }}
+          <x-nav-link :href="route('search.input')" :active="request()->routeIs('search.input')">
+            {{ __('Search') }}
           </x-nav-link>
         </div>
         <!-- 🔽 一覧ページへのリンクを追加 -->
@@ -26,11 +26,6 @@
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('clothes.create')" :active="request()->routeIs('clothes.create')">
             {{ __('Create') }}
-          </x-nav-link>
-        </div>
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('search.input')" :active="request()->routeIs('search.input')">
-            {{ __('Search') }}
           </x-nav-link>
         </div>
       </div>
