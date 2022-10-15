@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('jackets', function (Blueprint $table) {
-             $table->id();
-            $table->integer("user_id");
+            $table->id();
+            $table->unsignedBigInteger('user_id'); # 外部キー
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string("color");
             $table->string("image");
             $table->timestamps();
