@@ -26,14 +26,14 @@ class SearchController extends Controller
         $suitable_cloth=$clothes_array[$cloth_index];
         }
         else{
-            return redirect(route('search.input'));
+            return redirect(route('search.input'))->with("cloth_flash_message","You haven't registered your clothes yet");
         }
         if($pants_array!=null){
         $pant_index=array_rand($pants_array);
         $suitable_pant=$pants_array[$pant_index];
         }
         else{
-            return redirect(route('search.input'));
+            return redirect(route('search.input'))->with("pants_flash_message","You haven't registered your pants yet");
         }
         if(intval($coordinate_info["jacket"])==1){
             $jackets_array=Jacket::where("user_id",Auth::id())->get()->all();
@@ -42,7 +42,7 @@ class SearchController extends Controller
                 $suitable_jacket=$jackets_array[$jacket_index];
             }
             else{
-                return redirect(route('search.input'));
+                return redirect(route('search.input'))->with("jacket_flash_message","You haven't registered your jackets yet");
             }
             }
         else{
