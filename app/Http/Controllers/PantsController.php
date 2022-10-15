@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pant;
 use Validator;
 use Auth;
+use Storage;
 class PantsController extends Controller
 {
     /**
@@ -117,7 +118,9 @@ class PantsController extends Controller
      */
     public function destroy($id)
     {
-         $result = Pant::find($id)->delete();
+         $delete_pant=Pant::find($id);
+        \Storage::disk('public')->delete($delete_pant->image);
+        $result = $delete_pant->delete();
         return redirect()->route('pants.index');
     }
 }

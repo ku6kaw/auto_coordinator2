@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Models\Cloth;
 use Auth;
+use Storage;
 class ClothesController extends Controller
 {
     /**
@@ -117,7 +118,9 @@ class ClothesController extends Controller
      */
     public function destroy($id)
     {
-        $result = Cloth::find($id)->delete();
+        $delete_cloth=Cloth::find($id);
+        \Storage::disk('public')->delete($delete_cloth->image);
+        $result = $delete_cloth->delete();
         return redirect()->route('clothes.index');
     }
 }
