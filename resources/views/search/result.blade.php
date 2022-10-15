@@ -6,49 +6,17 @@
       {{ __('Search Coordinate') }}
     </h2>
   </x-slot>
- <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:w-10/12 md:w-8/10 lg:w-8/12">
+ <div class="max-w-lg py-12 items-center">
+    <div class="max-w-xl mx-auto sm:w-1/5 md:w-1/5 lg:w-1/5">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
-<table class="text-center w-full border-collapse">
-            <thead>
-              <tr>
-                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">Search Coordinate</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="hover:bg-grey-lighter">
-                <td class="py-4 px-6 border-b border-grey-light">
-                  <div class="text-center font-bold text-lg text-grey-dark">
-                    Suitable sleeve
-                  </div>
-                  <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$suitable_cloth->image)}}"></h3>
-                                                                         <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
-                </td>
-              </tr>
-              <tr class="hover:bg-grey-lighter">
-                <td class="py-4 px-6 border-b border-grey-light">
-                  <div class="text-center font-bold text-lg text-grey-dark">
-                    Suitable pants
-                  </div>
-                  <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$suitable_pant->image)}}"></h3>
-                                                                         <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
-                </td>
-              </tr>
-              @if($suitable_jacket!=null)
-               <tr class="hover:bg-grey-lighter">
-                <td class="py-4 px-6 border-b border-grey-light">
-                  <div class="text-center font-bold text-lg text-grey-dark">
-                    Suitable jacket
-                  </div>
-                  <h3 class="text-left font-bold text-lg text-grey-dark"><img src=" {{asset('storage/'.$suitable_jacket->image)}}"></h3>
-                                                                            <!--ここに写真が来るようにする今は写真のパスが来るようにしてる-->
-                </td>
-              </tr>
-               @endif  
-            </tbody>
-            </table>
-            </div>
+          <h3 class="text-center py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">Search Coordinate</h3>
+          <img src=" {{asset('storage/'.$suitable_cloth->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg">
+          <img src=" {{asset('storage/'.$suitable_pant->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg">
+          @if($suitable_jacket!=null)
+          <img src=" {{asset('storage/'.$suitable_jacket->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg">
+          @endif  
+        </div>
       </div>
     </div>
   </div>
