@@ -4,36 +4,33 @@
     <div class="flex justify-between h-16">
       <div class="flex">
         <!-- Logo -->
-        <div class="flex-shrink-0 flex items-center">
-          <a href="{{ route('search.input') }}">
-            <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
-          </a>
+        <div class="px-2 my-4 border-1 border-slate-700 rounded-xl flex-shrink-0 flex items-center">
+          <h1 class="font-black">Auto Coordinator</h1>
         </div>
 
         <!-- Navigation Links -->
+        <!-- Create button -->
+        <div class="hover:border-none focus:border-white justify-center rounded-full bg-black h-10 w-10 my-auto sm:ml-10 sm:flex">
+          <x-nav-link :href="route('clothes.create')" :active="request()->routeIs('clothes.create')">
+            <h1 class="text-2xl font-black text-white">+</h1>
+          </x-nav-link>
+        </div>
+
+        <!-- Search -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('search.input')" :active="request()->routeIs('search.input')">
             {{ __('Search') }}
           </x-nav-link>
         </div>
-        <!-- 🔽 一覧ページへのリンクを追加 -->
+
+        <!-- Index -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('clothes.index')" :active="request()->routeIs('clothes.index')">
             {{ __('Index') }}
           </x-nav-link>
         </div>
-        <!-- 🔽 作成ページへのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('clothes.create')" :active="request()->routeIs('clothes.create')">
-            {{ __('Create') }}
-          </x-nav-link>
-        </div>
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('favorites.index')" :active="request()->routeIs('favorite.index')">
-            {{ __('Favorite') }}
-          </x-nav-link>
-        </div>
       </div>
+      
       <!-- Settings Dropdown -->
       <div class="hidden sm:flex sm:items-center sm:ml-6">
         <x-dropdown align="right" width="48">
