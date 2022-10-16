@@ -50,7 +50,7 @@ class ClothesController extends Controller
     {
         // バリデーション
         $validator = Validator::make($request->all(), [
-            'color' => 'required',
+            'color' => 'required|max:10',
             'image'=>'required'
         ]);
         // バリデーション:エラー
