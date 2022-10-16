@@ -23,9 +23,9 @@
                 <input checked id="short_sleeve" type="radio" value="1" name="sleeve" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                 <label for="short_sleeve" class="ml-2 text-sm font-medium text-grey-darkest">Short sleeve</label>
             </div>
-             @if (session('cloth_flash_message'))
+             @if (session("cloth_exist_bool"))
             <div class="text-red-600">
-                {{ session('cloth_flash_message') }}
+                You haven't registered your clothes yet
             </div>
             @endif
             <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="keyword">pants</label>
@@ -37,9 +37,9 @@
                 <input checked id="short_pants" type="radio" value="1" name="pants" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                 <label for="short_pants" class="ml-2 text-sm font-medium text-grey-darkest">Short pants</label>
             </div>
-            @if (session('pants_flash_message'))
+            @if (session("pants_exist_bool"))
             <div class="text-red-600">
-                {{ session('pants_flash_message') }}
+                You haven't registered your pants yet
             </div>
             @endif
             <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="keyword">jacket</label>
@@ -51,9 +51,9 @@
                 <input checked id="dont_need_jacket" type="radio" value="0" name="jacket" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                 <label for="dont_need_jacket" class="ml-2 text-sm font-medium text-grey-darkest">don't need</label>
             </div>
-            @if (session('jacket_flash_message'))
+            @if (session("jacket_exist_bool"))
             <div class="text-red-600">
-                {{ session('jacket_flash_message') }}
+                You haven't registered your jackets yet"
             </div>
             @endif
             <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">

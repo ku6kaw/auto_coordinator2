@@ -5,6 +5,7 @@ use App\Http\Controllers\ClothesController;
 use App\Http\Controllers\PantsController;
 use App\Http\Controllers\JacketsController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::resource('jackets', JacketsController::class);
 Route::get('/coordinate/search/input', [SearchController::class, 'create'])->name('search.input');
 Route::get('/coordinate/search/result', [SearchController::class, 'index'])->name('search.result');
 
-
+Route::post('/coordinate/search/result', [FavoriteController::class, 'store'])->name('favorites');
 
 
 Route::get('/', function () {

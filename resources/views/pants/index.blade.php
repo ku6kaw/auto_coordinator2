@@ -20,8 +20,8 @@
           <table class="w-full border-collapse">
             <thead>
               <tr>
-                <th class="w-1/2 border-b border-gray-200">Long Sleeve</th>
-                <th class="w-1/2 border-b border-gray-200">Short Sleeve</th>
+                <th class="w-1/2 border-b border-gray-200">Long Pants</th>
+                <th class="w-1/2 border-b border-gray-200">Short Pants</th>
               </tr>
             </thead>
             <tbody>
