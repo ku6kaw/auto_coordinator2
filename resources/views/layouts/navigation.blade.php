@@ -15,20 +15,22 @@
             <h1 class="text-2xl font-black text-white">+</h1>
           </x-nav-link>
         </div>
+
         <!-- Search -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('search.input')" :active="request()->routeIs('search.input')">
             {{ __('Search') }}
           </x-nav-link>
         </div>
+
         <!-- Index -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('clothes.index')" :active="request()->routeIs('clothes.index')">
             {{ __('Index') }}
           </x-nav-link>
         </div>
-        
       </div>
+      
       <!-- Settings Dropdown -->
       <div class="hidden sm:flex sm:items-center sm:ml-6">
         <x-dropdown align="right" width="48">
