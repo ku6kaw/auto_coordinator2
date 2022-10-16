@@ -4,13 +4,17 @@
     <div class="flex justify-between h-16">
       <div class="flex">
         <!-- Logo -->
-        <div class="flex-shrink-0 flex items-center">
-          <a href="{{ route('search.input') }}">
-            <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
-          </a>
+        <div class="px-2 my-4 border-1 border-slate-700 rounded-xl flex-shrink-0 flex items-center">
+          <h1 class="font-black">Auto Coordinator</h1>
         </div>
 
         <!-- Navigation Links -->
+        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+          <x-nav-link :href="route('clothes.create')" :active="request()->routeIs('clothes.create')">
+            a
+          </x-nav-link>
+        </div>
+
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('search.input')" :active="request()->routeIs('search.input')">
             {{ __('Search') }}
