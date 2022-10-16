@@ -15,12 +15,14 @@
     <div class="max-w-7xl mx-auto sm:w-1/2 md:w-1/2 lg:w-4/5">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
-          <table class="w-full border-collapse">
+          
+        <table class="w-full border-collapse">
             <thead>
               <tr>
                 <th class="w-1/2 border-b border-gray-200">Jackets</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
                 <td class="w-1/2 justify-items-center">
@@ -33,6 +35,7 @@
               </tr>
             </tbody>
           </table>
+          
         </div>
       </div>
     </div>

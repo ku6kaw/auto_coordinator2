@@ -1,5 +1,3 @@
-<!-- resources/views/tweet/index.blade.php -->
-
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -17,16 +15,19 @@
     <div class="max-w-7xl mx-auto sm:w-1/2 md:w-1/2 lg:w-4/5">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
+          
           <table class="w-full border-collapse">
             <thead>
               <tr>
-                <th class="w-1/2 border-b border-gray-200">Long Sleeve</th>
-                <th class="w-1/2 border-b border-gray-200">Short Sleeve</th>
+                <th class="w-1/2 border-b border-gray-200">Long Pants</th>
+                <th class="w-1/2 border-b border-gray-200">Short Pants</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
                 <td class="w-1/2 justify-items-center">
+                <!-- long pants -->
                 @foreach ($long_pants as $pant)
                   <a href="{{ route('pants.show',$pant->id) }}">
                     <img src=" {{asset('storage/'.$pant->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
@@ -34,6 +35,7 @@
                 @endforeach
                 </td>
                 <td class="w-1/2 justify-items-center">
+                <!-- short pants -->
                 @foreach ($short_pants as $pant)        
                   <a href="{{ route('pants.show',$pant->id) }}">
                     <img src=" {{asset('storage/'.$pant->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
@@ -43,6 +45,7 @@
               </tr>
             </tbody>
           </table>
+          
         </div>
       </div>
     </div>
