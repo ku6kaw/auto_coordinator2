@@ -6,7 +6,7 @@
       {{ __('Search Coordinate') }}
     </h2>
   </x-slot>
- <div class="max-w-lg py-12 items-center">
+ <div class="py-12 items-center">
     <div class="max-w-xl mx-auto sm:w-1/5 md:w-1/5 lg:w-1/5">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
