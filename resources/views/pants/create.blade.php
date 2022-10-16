@@ -37,7 +37,7 @@
             <!-- color -->
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="color">color</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="color" id="color">
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="color" id="color" placeholder="例）黒、白、青">
             </div>
 
             <!-- image -->
