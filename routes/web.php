@@ -23,9 +23,10 @@ Route::resource('jackets', JacketsController::class);
 
 Route::get('/coordinate/search/input', [SearchController::class, 'create'])->name('search.input');
 Route::get('/coordinate/search/result', [SearchController::class, 'index'])->name('search.result');
-
 Route::post('/coordinate/search/result', [FavoriteController::class, 'store'])->name('favorites');
-
+Route::get('/coordinate/favorite', [FavoriteController::class, 'index'])->name('favorites.index');
+Route::get('/coordinate/favorite/{id}', [FavoriteController::class, 'show'])->name('favorites.show');
+Route::Delete('/coordinate/favorite/{id}', [FavoriteController::class, 'destroy'])->name('favorites.destroy');
 
 Route::get('/', function () {
     return view('welcome');
