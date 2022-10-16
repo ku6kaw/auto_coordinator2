@@ -9,29 +9,25 @@
         </div>
 
         <!-- Navigation Links -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+        <!-- Create button -->
+        <div class="hover:border-none focus:border-white justify-center rounded-full bg-black h-10 w-10 my-auto sm:ml-10 sm:flex">
           <x-nav-link :href="route('clothes.create')" :active="request()->routeIs('clothes.create')">
-            a
+            <h1 class="text-2xl font-black text-white">+</h1>
           </x-nav-link>
         </div>
-
+        <!-- Search -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('search.input')" :active="request()->routeIs('search.input')">
             {{ __('Search') }}
           </x-nav-link>
         </div>
-        <!-- 🔽 一覧ページへのリンクを追加 -->
+        <!-- Index -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('clothes.index')" :active="request()->routeIs('clothes.index')">
             {{ __('Index') }}
           </x-nav-link>
         </div>
-        <!-- 🔽 作成ページへのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('clothes.create')" :active="request()->routeIs('clothes.create')">
-            {{ __('Create') }}
-          </x-nav-link>
-        </div>
+        
       </div>
       <!-- Settings Dropdown -->
       <div class="hidden sm:flex sm:items-center sm:ml-6">
