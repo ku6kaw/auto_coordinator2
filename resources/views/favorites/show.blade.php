@@ -15,25 +15,25 @@
             <table class="w-full border-collapse">
             <thead>
               <tr>
-                <th class="w-1/2 border-b border-gray-200">favorite Sleeve</th>
-                <th class="w-1/2 border-b border-gray-200">favorite Pants</th>
-                <th class="w-1/2 border-b border-gray-200">favorite jacket</th>
+                <th class="w-1/3 border-b border-gray-200">favorite Sleeve</th>
+                <th class="w-1/3 border-b border-gray-200">favorite Pants</th>
+                <th class="w-1/3 border-b border-gray-200">favorite jacket</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="w-1/2 justify-items-center">
-                      <img src="{{asset('storage/'.$detail_favorite['cloth_info']->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
+                <td class="w-1/3 justify-items-center">
+                      <img src="{{asset('storage/'.$detail_favorite['cloth_info']->image)}}" class="mx-auto max-h-60 max-w-1/3 rounded-lg hover:shadow-xl">
                 </td>
-                <td class="w-1/2 justify-items-center">      
-                      <img src="{{asset('storage/'.$detail_favorite['pants_info']->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
+                <td class="w-1/3 justify-items-center">      
+                      <img src="{{asset('storage/'.$detail_favorite['pants_info']->image)}}" class="mx-auto max-h-60 max-w-1/3 rounded-lg hover:shadow-xl">
                 </td>
-                <td class="w-1/2 justify-items-center">
+                <td class="w-1/3 justify-items-center">
                   @if($detail_favorite['jacket_info']==null)
-                    <img src="" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
+                    <img src="" class="mx-auto max-h-60 max-w-1/3">
                     <!--jacketがnullのときうまく反映されない-->
                   @else
-                    <img src="{{asset('storage/'.$detail_favorite['jacket_info']->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
+                    <img src="{{asset('storage/'.$detail_favorite['jacket_info']->image)}}" class="mx-auto max-h-60 max-w-1/3 rounded-lg hover:shadow-xl">
                   @endif
                 </td>
               </tr>
