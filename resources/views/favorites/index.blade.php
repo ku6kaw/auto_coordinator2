@@ -13,38 +13,38 @@
           <table class="w-full border-collapse">
             <thead>
               <tr>
-                <th class="w-1/2 border-b border-gray-200">favorite Sleeve</th>
-                <th class="w-1/2 border-b border-gray-200">favorite Pants</th>
-                <th class="w-1/2 border-b border-gray-200">favorite jacket</th>
+                <th class="w-1/3 border-b border-gray-200">favorite Sleeve</th>
+                <th class="w-1/3 border-b border-gray-200">favorite Pants</th>
+                <th class="w-1/3 border-b border-gray-200">favorite jacket</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="w-1/2 justify-items-center">
+                <td class="w-1/3 justify-items-center">
                   @foreach ($favorite_clothes as $cloth)
                       <a href="{{ route('favorites.show',$cloth['id']) }}">
                         <!--cloth["id"]にはfavoriteテーブルのidのこと-->
-                      <img src="{{asset('storage/'.$cloth['favorite_info']->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
+                      <img src="{{asset('storage/'.$cloth['favorite_info']->image)}}" class="mx-auto max-h-60 max-w-1/3 rounded-lg hover:shadow-xl">
                       </a>
                   @endforeach
                 </td>
-                <td class="w-1/2 justify-items-center">
+                <td class="w-1/3 justify-items-center">
                   @foreach ($favorite_pants as $pants)  
                   <a href="{{ route('favorites.show',$pants['id']) }}">  
                     <!--pants["id"]にはfavoriteテーブルのidのこと-->    
-                      <img src="{{asset('storage/'.$pants['favorite_info']->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
+                      <img src="{{asset('storage/'.$pants['favorite_info']->image)}}" class="mx-auto max-h-60 max-w-1/3 rounded-lg hover:shadow-xl">
                   </a>
                   @endforeach
                 </td>
-                <td class="w-1/2 justify-items-center">
+                <td class="w-1/3 justify-items-center">
                   @foreach ($favorite_jackets as $jacket)
                   @if($jacket["favorite_info"]==null)
-                    <img src="" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
+                    <img src="https://photo-studio9.com/wp-content/uploads/2012/06/white-630x454.png" class="mx-auto max-h-60 max-w-1/3">
                     <!--jacketがnullのときうまく反映されない-->
                   @else
                   <a href="{{ route('favorites.show',$jacket['id']) }}"> 
                     <!--pants["id"]にはfavoriteテーブルのidのこと-->
-                    <img src="{{asset('storage/'.$jacket['favorite_info']->image)}}" class="mx-auto max-h-60 max-w-1/2 rounded-lg hover:shadow-xl">
+                    <img src="{{asset('storage/'.$jacket['favorite_info']->image)}}" class="mx-auto max-h-60 max-w-1/3 rounded-lg hover:shadow-xl">
                   </a>
                   @endif
                   @endforeach
