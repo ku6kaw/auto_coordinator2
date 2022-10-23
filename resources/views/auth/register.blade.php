@@ -2,7 +2,9 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <div class="px-2 my-4 border-1 border-slate-700 rounded-xl flex-shrink-0 flex items-center">
+                    <h1 class="font-black">Auto Coordinator</h1>
+                </div>
             </a>
         </x-slot>
 
