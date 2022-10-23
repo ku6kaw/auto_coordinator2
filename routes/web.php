@@ -29,7 +29,7 @@ Route::get('/coordinate/favorite/{id}', [FavoriteController::class, 'show'])->na
 Route::Delete('/coordinate/favorite/{id}', [FavoriteController::class, 'destroy'])->name('favorites.destroy');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
 
 Route::get('/dashboard', function () {
