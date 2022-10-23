@@ -6,10 +6,56 @@
 2. 長袖 or 半袖、上着ありかどうかを選択
 3. 今日のコーディネートが提案される
 
+#### 対象
+* おしゃれにそこまで興味ない男子大学生
+* 外出先
+    大学
+    バイト先
+    遊び（買い物、外食）
+    アウトドア
 
+#### 機能
+- ユーザー登録
+- ログイン
+- ログアウト
+- 服,ズボン,上着服登録
+- 服,ズボン,上着削除
+- 服,ズボン,上着一覧
+- コーディネート検索
+- お気に入り登録
 
+#### テーブル
+##### users
+- id
 
+##### clothes
+- id
+- user_id
+- sleeve (long=0, short=1)
+- color
+- image (path)
 
+##### pants
+- id
+- user_id
+- length (long=0, short=1)
+- color
+- image (path)
+
+##### jackets
+- id 
+- user_id
+- color
+- image (path)
+
+##### favorites
+- id
+- user_id
+- cloth_id
+- pants_id
+- jacket_id
+
+(timestamp略)
 ## clone後の操作
 
 1. Laravel Sail の実行に必要な vendor ディレクトリをコマンドを実行して用意する
@@ -59,3 +105,8 @@ docker run --rm \
     ./vendor/bin/sail php artisan migrate
 
 ブラウザから localhost にアクセスするとアプリケーションの動作が確認できる．
+
+コンテナ終了させるときは下記コマンドを実行する．
+
+
+    ./vendor/bin/sail down
